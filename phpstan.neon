@@ -1,0 +1,18 @@
+includes:
+    - ./vendor/nunomaduro/larastan/extension.neon
+
+parameters:
+
+    paths:
+        - app
+
+    # From level 0 (weakest) - 8 (strictest)
+    # https://phpstan.org/user-guide/rule-levels
+    level: 5
+
+    # https://github.com/nunomaduro/larastan/blob/master/docs/rules.md#nounnecessarycollectioncall
+    noUnnecessaryCollectionCallExcept: ['first', 'last']
+
+    ignoreErrors:
+        - '#Access to an undefined property Illuminate\\Database\\Eloquent\\Model::#'
+        - '#Call to an undefined method Illuminate\\Database\\Eloquent\\Model::#'
