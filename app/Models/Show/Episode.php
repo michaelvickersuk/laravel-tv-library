@@ -63,4 +63,11 @@ class Episode extends Model
 
         return false;
     }
+
+    public function countUserPlays(): self
+    {
+        $this->plays = $this->userPlays->count();
+
+        return $this;
+    }
 }

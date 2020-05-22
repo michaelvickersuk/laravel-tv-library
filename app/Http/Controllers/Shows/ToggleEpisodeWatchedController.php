@@ -12,8 +12,7 @@ class ToggleEpisodeWatchedController
     {
         $episode->userPlays()->toggle([Auth::user()->id]);
 
-        $episode->plays = $episode->userPlays->count();
-        $episode->save();
+        $episode->countUserPlays()->save();
 
         return redirect()->back();
     }
