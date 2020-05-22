@@ -9,6 +9,12 @@ class ShowController
 {
     public function __invoke(Show $show): View
     {
+        $show->load([
+            'genres',
+            'seasons',
+            'watchlists.user',
+        ]);
+
         return view('shows.show', [
             'show' => $show,
         ]);
