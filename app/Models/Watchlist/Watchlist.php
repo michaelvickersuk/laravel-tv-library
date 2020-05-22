@@ -51,4 +51,11 @@ class Watchlist extends Model
     {
         return $this->belongsTo(User::class);
     }
+
+    public function togglePrivate(): self
+    {
+        $this->private = ! $this->private;
+
+        return $this;
+    }
 }
