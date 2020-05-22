@@ -12,7 +12,7 @@ class ShowController
         $show->load([
             'genres',
             'seasons',
-            'watchlists.user',
+            'publicWatchlists.user',
         ]);
 
         return view('shows.show', [
