@@ -2,8 +2,10 @@
 
 namespace App\Models\User;
 
+use App\Models\Show\Episode;
 use App\Models\Watchlist\Watchlist;
 use Illuminate\Database\Eloquent\Relations\HasOne;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
@@ -52,6 +54,11 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function episodePlays(): BelongsToMany
+    {
+        return $this->belongsToMany(Episode::class, 'episode_plays');
+    }
 
     public function watchlist(): HasOne
     {

@@ -5,6 +5,7 @@ namespace App\Models\Show;
 use App\Models\User\User;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 /**
  * App\Models\Show\Episode
@@ -36,6 +37,11 @@ class Episode extends Model
     protected $dates = [
         'aired',
     ];
+
+    public function userPlays(): BelongsToMany
+    {
+        return $this->belongsToMany(User::class, 'episode_plays');
+    }
 
     public function season(): BelongsTo
     {

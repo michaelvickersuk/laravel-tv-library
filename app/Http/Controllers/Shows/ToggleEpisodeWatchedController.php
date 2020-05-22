@@ -4,13 +4,16 @@ namespace App\Http\Controllers\Shows;
 
 use App\Models\Show\Episode;
 use Illuminate\Http\RedirectResponse;
+use Illuminate\Support\Facades\Auth;
 
 class ToggleEpisodeWatchedController
 {
     public function __invoke(Episode $episode): RedirectResponse
     {
-        // todo - Mark Episode as watched/unwatched by the logged in User
-        // todo - Update the plays count against the Episode
+        $episode->userPlays()->toggle([Auth::user()->id]);
+
+        $episode->plays = $episode->userPlays->count();
+        $episode->save();
 
         return redirect()->back();
     }
