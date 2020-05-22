@@ -4,8 +4,8 @@ namespace App\Models\User;
 
 use App\Models\Show\Episode;
 use App\Models\Watchlist\Watchlist;
-use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 

@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers\Shows;
 
-use App\Models\Watchlist\Watchlist;
 use App\Models\Show\Show;
+use App\Models\Watchlist\Watchlist;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Auth;
 
