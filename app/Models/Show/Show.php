@@ -60,8 +60,7 @@ class Show extends Model
 
     public function publicWatchlists(): BelongsToMany
     {
-        return $this->belongsToMany(Watchlist::class, 'watchlist_shows')
-            ->where('private', '<>', true);
+        return $this->watchlists()->where('private', '<>', true);
     }
 
     public function isOnUsersWatchlist(User $user): bool
