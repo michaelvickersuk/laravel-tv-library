@@ -9,7 +9,8 @@ class HomeController
 {
     public function __invoke(): View
     {
-        $mostWatchedEpisodes = Episode::take(10)
+        $mostWatchedEpisodes = Episode::with(['season.show'])
+            ->take(10)
             ->get();
 
         return view('home', [
