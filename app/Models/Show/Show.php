@@ -65,8 +65,6 @@ class Show extends Model
 
     public function isOnUsersWatchlist(User $user): bool
     {
-        // todo
-
-        return true;
+        return $this->watchlists->contains('user_id', $user->id);
     }
 }
