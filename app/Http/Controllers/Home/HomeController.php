@@ -10,6 +10,7 @@ class HomeController
     public function __invoke(): View
     {
         $mostWatchedEpisodes = Episode::with(['season.show'])
+            ->orderBy('plays', 'desc')
             ->take(10)
             ->get();
 
