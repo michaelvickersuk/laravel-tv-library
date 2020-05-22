@@ -18,6 +18,8 @@ use Illuminate\Database\Eloquent\Relations\BelongsToMany;
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
  * @property-read \App\Models\Show\Season $season
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\User\User[] $userPlays
+ * @property-read int|null $user_plays_count
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Show\Episode newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Show\Episode newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Show\Episode query()

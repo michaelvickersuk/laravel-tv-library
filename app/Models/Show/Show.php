@@ -19,6 +19,9 @@ use Illuminate\Database\Eloquent\Relations\HasOneThrough;
  * @property \Illuminate\Support\Carbon|null $updated_at
  * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Genre\Genre[] $genres
  * @property-read int|null $genres_count
+ * @property-read \App\Models\Show\Episode|null $nextEpisode
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Watchlist\Watchlist[] $publicWatchlists
+ * @property-read int|null $public_watchlists_count
  * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Show\Season[] $seasons
  * @property-read int|null $seasons_count
  * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Watchlist\Watchlist[] $watchlists
