@@ -59,9 +59,7 @@ class Episode extends Model
 
     public function hasUserWatched(User $user): bool
     {
-        // todo
-
-        return false;
+        return $this->userPlays->contains('id', $user->id);
     }
 
     public function countUserPlays(): self
