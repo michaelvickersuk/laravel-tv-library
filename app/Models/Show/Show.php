@@ -3,7 +3,6 @@
 namespace App\Models\Show;
 
 use App\Models\Genre\Genre;
-use App\Models\Show\Episode;
 use App\Models\User\User;
 use App\Models\Watchlist\Watchlist;
 use Illuminate\Database\Eloquent\Model;
