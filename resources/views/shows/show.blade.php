@@ -28,11 +28,16 @@
             </div>
         </div>
 
-        <div class="card mb-3">
-            <div class="card-body">
-                <h2 class="card-title">Next Episode</h2>
+        @if ($nextEpisode)
+            <div class="card mb-3">
+                <div class="card-body">
+                    <h2 class="card-title">Next Episode</h2>
+                    <div class="list-group">
+                        @each('shows._episodeRow', [$nextEpisode], 'episode')
+                    </div>
+                </div>
             </div>
-        </div>
+        @endif
 
         @if($show->seasons)
             <div class="card mb-3">

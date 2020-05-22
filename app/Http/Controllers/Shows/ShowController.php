@@ -17,6 +17,7 @@ class ShowController
 
         return view('shows.show', [
             'show' => $show,
+            'nextEpisode' => $show->nextEpisode,
         ]);
     }
 }

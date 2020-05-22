@@ -3,11 +3,13 @@
 namespace App\Models\Show;
 
 use App\Models\Genre\Genre;
+use App\Models\Show\Episode;
 use App\Models\User\User;
 use App\Models\Watchlist\Watchlist;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\HasOneThrough;
 
 /**
  * App\Models\Show\Show
@@ -34,6 +36,13 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 class Show extends Model
 {
     protected $table = 'shows';
+
+    public function nextEpisode(): HasOneThrough
+    {
+        return $this->hasOneThrough(Episode::class, Season::class)
+            ->where('aired', '>', now())
+            ->orderBy('aired', 'asc');
+    }
 
     public function genres(): BelongsToMany
     {
